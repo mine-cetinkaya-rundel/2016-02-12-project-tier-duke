@@ -1,5 +1,5 @@
 ---
-title: "Making your research reproducible: <br>Documenting and automating your data analysis with the TIER Protocol"
+title: "Making your research reproducible with the TIER Protocol, R, and GitHub"
 author: "Mine Çetinkaya-Rundel"
 date: "February 12, 2016"
 output:
