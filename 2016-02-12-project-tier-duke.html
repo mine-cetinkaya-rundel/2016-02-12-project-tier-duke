@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Making your research reproducible with the TIER Protocol, R, and GitHub</title>
+  <title>Making your research reproducible   with TIER + R + GitHub</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -26,7 +26,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Making your research reproducible with the TIER Protocol, R, and GitHub',
+                title: 'Making your research reproducible <br> with TIER + R + GitHub',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -519,6 +519,8 @@ summary(m_hw1_mw1)</pre>
 <li>A common location to share your work</li>
 </ul>
 
+<p><strong>Note:</strong> GitHub repositories are public. If you need a private repository that you will use for education or research purposes, you can request one.</p>
+
 </article></slide><slide class=''><hgroup><h2>Commits</h2></hgroup><article  id="commits">
 
 <center>
@@ -548,7 +550,71 @@ summary(m_hw1_mw1)</pre>
 <li>For STATA: Repository <strong>will be</strong> called <code>ProjectTIER_STATA</code> (in progress)</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section">
+</article></slide><slide class=''><hgroup><h2>Fork</h2></hgroup><article  id="fork">
+
+<ul>
+<li>Create a GitHub account if you don&#39;t yet have one: <a href='https://github.com/' title=''>https://github.com/</a></li>
+<li>Form the <code>ProjectTIER_R</code> repository, which will create a copy in your account</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Set up git in RStudio</h2></hgroup><article  id="set-up-git-in-rstudio">
+
+<p>We&#39;re going to avoid local installation for now&#8230;</p>
+
+<p>Go to <a href='https://vm-manage.oit.duke.edu/containers' title=''>https://vm-manage.oit.duke.edu/containers</a></p>
+
+<ul>
+<li>Log in with your Duke NetID</li>
+<li>Click on RStudio which will launch an R session for you</li>
+</ul>
+
+<p>In RStudio:</p>
+
+<ul>
+<li>Go to Tools -&gt; Shell</li>
+<li>Type the two lines of code, replacing my information with your own</li>
+</ul>
+
+<pre >$ git config --global user.name &quot;Mine Cetinkaya-Rundel&quot;
+$ git config --global user.email &quot;mine@stat.duke.edu&quot;</pre>
+
+</article></slide><slide class=''><hgroup><h2>Clone</h2></hgroup><article  id="clone">
+
+<p>In RStudio:</p>
+
+<ul>
+<li>Go to File -&gt; New Project -&gt; Version Control -&gt; Git</li>
+<li>Go back to your forked GitHub repo and copy the HTTPS URL</li>
+<li>Insert this into Repository URL</li>
+<li>Click on Create Project</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Edit, stage, commit, push</h2></hgroup><article  id="edit-stage-commit-push">
+
+<ul>
+<li><p>Edit one of the Markdown files</p></li>
+<li>Go to the Git page in RStudio
+
+<ul>
+<li>Stage changes by checking the box</li>
+<li>Commit (with an informative message)</li>
+<li>Push</li>
+</ul></li>
+<li><p>View your changes on GitHub</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>git/GitHub, why?</h2></hgroup><article  id="gitgithub-why">
+
+<p><strong>Most powerful argument:</strong> Automatic tracking of changes</p>
+
+<p><strong>Other arguments:</strong></p>
+
+<ul>
+<li>No download/upload</li>
+<li>Ease of collaboration with ability to resolve merge conflicts</li>
+<li>Searchability</li>
+<li>&#8230;</li>
+</ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Parting remarks</h2></hgroup><article  id="parting-remarks">
 
