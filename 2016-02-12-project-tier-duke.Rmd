@@ -268,7 +268,7 @@ This presentation!
 
 <br><br><br><br>
 
-## Example: Occupational Wages around the World (OWW)
+## Example: Occupational Wages around the World
 
 The [OWW database](http://www.nber.org/oww/) contains occupational wage data for 161 
 occupations in 171 countries from 1983 to 2008. The occupational wage data are derived from 
@@ -281,8 +281,7 @@ monthly wage rates for adult workers.
 Load data with an **R chunk**:
 
 ```{r}
-oww <- read.csv("original-data-and-metadata/original-data/oww3.csv") %>%
-  tbl_df() # for formatting
+load("processing-and-analysis/analysis-data/oww.RData")
 ```
 
 <br><br>
@@ -303,56 +302,34 @@ oww
 You can include script files in your R Markdown document
 
 ```{r message=FALSE}
-source("code/01-data-cleanup.R")
+source("processing-and-analysis/command-files/02-data-cleanup.R")
 ```
 
 <img src="img/script.png" alt="script" style="width:600px">
 
-## View distribution of age {.smaller}
+## View distribution of `hw1` {.smaller}
 
-```{r message=FALSE, fig.height=3}
-ggplot(big5, aes(x = age)) +
+```{r message=FALSE, fig.height=2.5}
+ggplot(oww, aes(x = hw1)) +
   geom_histogram()
 ```
 
 ```{r}
-summary(big5$age)
+summary(oww$hw1)
 ```
 
-## Regress extraversion vs. neuroticism and gender {.smaller}
-
-**Extraversion:** Seeking fulfillment from sources outside the self or in community. High scorers are social, low scorers prefer to work alone. **Neuroticism:** Being emotional.
+## Regress hourly vs. monthly and exchange rate {.smaller}
 
 ```{r message=FALSE}
-m_ext_age <- lm(extraversion ~ neuroticism * gender, data = big5)
-summary(m_ext_age)
+m_hw1_mw1 <- lm(hw1 ~ mw1 * exrt_cat, data = oww)
+summary(m_hw1_mw1)
 ```
 
-## Plot extraversion vs. age and gender {.smaller}
+## Plot hourly vs. monthly and exchange rate {.smaller}
 
-```{r message=FALSE, fig.height=4}
-ggplot(data = big5, aes(x = neuroticism, y = extraversion, color = gender)) +
-  geom_point(alpha = 0.5) +
-  geom_jitter() +
-  geom_smooth(method = "lm")
-```
-
-## Suppose you want only teens {.smaller}
-
-```{r}
-big5_teen <- filter(big5, age <= 19)
-```
-
-```{r}
-m_ext_age_teen <- lm(extraversion ~ age * gender, data = big5_teen)
-summary(m_ext_age_teen)
-```
-
-## Plot for only teens {.smaller}
-
-```{r message=FALSE}
-ggplot(data = big5_teen, aes(x = neuroticism, y = extraversion, color = gender)) +
-  geom_point(alpha = 0.5) +
+```{r message=FALSE, fig.height=4, warning=FALSE}
+ggplot(data = oww, aes(x = mw1, y = hw1, color = exrt_cat)) +
+  geom_point(alpha = 0.25) +
   geom_jitter() +
   geom_smooth(method = "lm")
 ```
