@@ -5,7 +5,6 @@ date: "February 12, 2016"
 output: html_document
 ---
 
-
 ```{r global-options, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE) # don't show code chunks in output
 ```

@@ -26,6 +26,10 @@ oww <- oww %>%
 oww <- oww %>%
   mutate(occupation = as.factor(occupation))
 
+# convert to tbl_df for pretty printing -----------------------------
+
+oww <- tbl_df(oww)
+
 # save analysis data ------------------------------------------------
 
 save(oww, file = "../analysis-data/oww.RData")
