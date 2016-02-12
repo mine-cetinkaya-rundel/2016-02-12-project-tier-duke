@@ -334,6 +334,12 @@ ggplot(data = oww, aes(x = mw1, y = hw1, color = exrt_cat)) +
   geom_smooth(method = "lm")
 ```
 
+## Math typesetting
+
+LaTeX:
+
+$\hat{y} = \beta_0 + \beta_1 \times x$
+
 # 3. Version control
 
 ## What is version control?
@@ -378,7 +384,7 @@ Everytime you make a save, you zip the entire directory that your project files 
 <img src="img/repo.png" width="600px" />
 </center>
 
-<font size="3">Source: https://github.com/mine-cetinkaya-rundel/2016-01-11-reproducible-research-unc/.</font>
+<font size="3">Source: https://github.com/mine-cetinkaya-rundel/2016-02-12-project-tier-duke.</font>
 
 ## How does a version control system work? {.smaller}
 
@@ -418,6 +424,20 @@ Everytime you make a save, you zip the entire directory that your project files 
 <img src="img/diff.png" width="900px" />
 </center>
 
+# Project TIER on GitHub
+
+## Project TIER
+
+You can find the folder structures outlined in the TIER Protocol in the
+Project TIER organization on GitHub:
+
+https://github.com/ProjectTIER
+
+- For R: Repository is called `ProjectTIER_R`
+- For STATA: Repository **will be** called `ProjectTIER_STATA` (in progress)
+
+## 
+
 # Parting remarks
 
 ## Two-pronged approach
@@ -440,7 +460,11 @@ Train new researchers who don’t have any other workflow
 
 ## Resources
 
-- Slides and repository for this talk: https://github.com/mine-cetinkaya-rundel/2016-01-11-reproducible-research-unc/
+- Slides and repository for this talk: https://github.com/mine-cetinkaya-rundel/2016-02-12-project-tier-duke
+
+- Project TIER on GitHub: https://github.com/ProjectTIER
+    + For R: https://github.com/ProjectTIER/ProjectTIER_R
+    + For STATA: In progress
 
 - R Markdown: http://rmarkdown.rstudio.com/
 
@@ -449,7 +473,3 @@ Train new researchers who don’t have any other workflow
 - Try Git: https://try.github.io
 
 - Reproducible Science Curriculum (2 day workshop): https://github.com/Reproducible-Science-Curriculum/
-
-## Latex
-
-$\hat{y} = \beta_0 + \beta_1 \times x$
