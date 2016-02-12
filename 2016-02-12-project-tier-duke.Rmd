@@ -74,13 +74,13 @@ associated with current depression [...].
 
 ## Think back to every time...
 
->- The results in Table 1 don't seem to correspond to those in Figure 2.
->- In what order do I run these scripts?
->- Where did we get this data file?
->- Why did I omit those samples?
->- How did I make that figure?
->- "Your script is now giving an error."
->- "The attached is similar to the code we used."
+- The results in Table 1 don't seem to correspond to those in Figure 2.
+- In what order do I run these scripts?
+- Where did we get this data file?
+- Why did I omit those samples?
+- How did I make that figure?
+- "Your script is now giving an error."
+- "The attached is similar to the code we used."
 
 <br><br>
 
@@ -329,7 +329,7 @@ summary(m_hw1_mw1)
 
 ```{r message=FALSE, fig.height=4, warning=FALSE}
 ggplot(data = oww, aes(x = mw1, y = hw1, color = exrt_cat)) +
-  geom_point(alpha = 0.25) +
+  geom_point(alpha = 0.01) +
   geom_jitter() +
   geom_smooth(method = "lm")
 ```
@@ -383,6 +383,8 @@ Everytime you make a save, you zip the entire directory that your project files 
 <center>
 <img src="img/repo.png" width="600px" />
 </center>
+
+<br>
 
 <font size="3">Source: https://github.com/mine-cetinkaya-rundel/2016-02-12-project-tier-duke.</font>
 
