@@ -329,8 +329,7 @@ summary(m_hw1_mw1)
 
 ```{r message=FALSE, fig.height=4, warning=FALSE}
 ggplot(data = oww, aes(x = mw1, y = hw1, color = exrt_cat)) +
-  geom_point(alpha = 0.01) +
-  geom_jitter() +
+  geom_point(alpha = 0.25) +
   geom_smooth(method = "lm")
 ```
 
