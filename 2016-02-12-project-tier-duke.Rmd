@@ -1,7 +1,7 @@
 ---
 title: "Making your research reproducible <br> with TIER + R + GitHub"
 author: "Mine Çetinkaya-Rundel"
-date: "February 12, 2016"
+date: "February 12, 2016 <br> http://bit.ly/tier_duke"
 output:
   ioslides_presentation:
     highlight: pygments
