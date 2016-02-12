@@ -517,16 +517,14 @@ Train new researchers who don’t have any other workflow
 
 ## Resources
 
-- Slides and repository for this talk: https://github.com/mine-cetinkaya-rundel/2016-02-12-project-tier-duke
+- This talk: 
+    + Repo: https://github.com/mine-cetinkaya-rundel/2016-02-12-project-tier-duke
+    + Slides in your browser: http://bit.ly/tier_duke
 
 - Project TIER on GitHub: https://github.com/ProjectTIER
-    + For R: https://github.com/ProjectTIER/ProjectTIER_R
-    + For STATA: In progress
 
-- R Markdown: http://rmarkdown.rstudio.com/
-
-- RStudio and git: https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
-
-- Try Git: https://try.github.io
-
-- Reproducible Science Curriculum (2 day workshop): https://github.com/Reproducible-Science-Curriculum/
+- Learn more:
+    + R Markdown: http://rmarkdown.rstudio.com/
+    + RStudio and git: https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN
+    + Try Git: https://try.github.io
+    + Reproducible Science Curriculum (2 day workshop): https://github.com/Reproducible-Science-Curriculum/
