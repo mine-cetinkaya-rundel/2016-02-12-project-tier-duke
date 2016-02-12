@@ -1,3 +1,9 @@
+# input: original data - ../../original-data-and-metadata/original-data/oww3.csv
+# output: analysis data - ../analysis-data/oww.RData
+# rename columns to make them more informative
+# change variable types to numeric/categorical when needed
+# ...
+
 # load packages -----------------------------------------------------
 
 library(dplyr)
