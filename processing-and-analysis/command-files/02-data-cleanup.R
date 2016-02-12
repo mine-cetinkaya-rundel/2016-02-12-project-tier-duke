@@ -18,4 +18,4 @@ oww <- oww %>%
 # create new variable -- exrt below above median --------------------
 
 oww <- oww %>%
-  mutate(exrt_cat = ifelse(exrt < median(exrt, na.rm = TRUE), "below median", "above median"))
+  mutate(exrt_cat = as.factor(ifelse(exrt < median(exrt, na.rm = TRUE), "below median", "above median")))
