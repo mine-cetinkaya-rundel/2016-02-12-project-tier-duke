@@ -1,6 +1,194 @@
 ---
 title: "Data Appendix"
-author: "name of author"
-date: "date created or edited"
+author: "Mine Cetinkaya-Rundel"
+date: "February 12, 2016"
 output: html_document
 ---
+
+
+```{r global-options, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE) # don't show code chunks in output
+```
+
+```{r load-packages, message = FALSE}
+# load packages
+library(dplyr)
+library(ggplot2)
+library(mosaic)
+```
+
+## Load data
+
+```{r load-data, echo = TRUE}
+load("oww.RData")
+```
+
+## Data Dictionary
+
+**Note:** The data dictionary is not yet complete, but there should be sufficient
+information here to give you an idea of how to create such a document.
+
+- `year` - year
+    + original variable name: `y0`
+    
+```{r summary-year}
+favstats(data = oww, year)
+```
+
+```{r hist-year, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = year)) +
+  geom_histogram(binwidth = 5)
+```
+
+- `country_ILO` - country code (from ILO October Inquiry)
+    + original variable name: `y1`
+    
+```{r summary-country_ILO}
+oww %>%
+  group_by(country_ILO) %>%
+  summarise(n())
+```
+
+```{r hist-country_ILO, message = FALSE, fig.height = 3, fig.width = 15}
+ggplot(data = oww, aes(x = country_ILO)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+- `country_WDI` - country code (from World Development Indicators)
+    + original variable name: `country`
+    
+```{r summary-country_WDI}
+oww %>%
+  group_by(country_WDI) %>%
+  summarise(n())
+```
+
+```{r hist-country_WDI, message = FALSE, fig.height = 3, fig.width = 15}
+ggplot(data = oww, aes(x = country_WDI)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```    
+
+- `industry` - industry code (from ILO October Inquiry)
+    + original variable name: `y3`
+
+```{r summary-industry}
+oww %>%
+  group_by(industry) %>%
+  summarise(n())
+```
+
+```{r hist-industry, message = FALSE, fig.height = 3, fig.width = 15}
+ggplot(data = oww, aes(x = industry)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```    
+  
+- `occupation` - occupation code (from ILO October Inquiry)
+    + original variable name: `y4`
+
+```{r summary-occupation}
+oww %>%
+  group_by(occupation) %>%
+  summarise(n())
+```
+
+```{r hist-occupation, message = FALSE, fig.height = 3, fig.width = 15}
+ggplot(data = oww, aes(x = occupation)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+``` 
+    
+- `hw1` - hourly: standard data LCU
+
+```{r summary-hw1}
+favstats(data = oww, hw1)
+```
+
+```{r hist-hw1, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw1)) +
+  geom_histogram()
+```
+
+- `hw2wu` - hourly: country-specific calibration (uni) LCU
+
+```{r summary-hw2wu}
+favstats(data = oww, hw2wu)
+```
+
+```{r hist-hw2wu, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw2wu)) +
+  geom_histogram()
+```
+
+- `hw3wu` - hourly: country-specific calibration with imputation (uni) LCU
+
+```{r summary-hw3wu}
+favstats(data = oww, hw3wu)
+```
+
+```{r hist-hw3wu, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw3wu)) +
+  geom_histogram()
+```
+
+- `hw4wu` - hourly: uniform calibration (uni) LCU
+
+```{r summary-hw4wu}
+favstats(data = oww, hw4wu)
+```
+
+```{r hist-hw4wu, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw4wu)) +
+  geom_histogram()
+```
+
+- `hw2wl` - hourly: country-specific calibration (lex) LCU
+
+```{r summary-hw2wl}
+favstats(data = oww, hw2wl)
+```
+
+```{r hist-hw2wl, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw2wl)) +
+  geom_histogram()
+```
+
+- `hw3wl` - hourly: country-specific calibration with imputation (lex) LCU
+
+```{r summary-hw3wl}
+favstats(data = oww, hw3wl)
+```
+
+```{r hist-hw3wl, message = FALSE, fig.height = 3, fig.width = 7}
+ggplot(data = oww, aes(x = hw3wl)) +
+  geom_histogram()
+```
+
+- `hw4wl` - hourly: uniform calibration (lex) LCU
+- `hw1us` - hourly: standard data US$
+- `hw2wuus` - hourly: country-specific calibration (uni) US$
+- `hw3wuus` - hourly: country-specific calibration with imputation (uni) US$
+- `hw4wuus` - hourly: uniform calibration (uni) US$
+- `hw2wlus` - hourly: country-specific calibration (lex) US$
+- `hw3wlus` - hourly: country-specific calibration with imputation (lex) US$ 
+- `hw4wlus` - hourly: uniform calibration (lex) US$
+- `mw1` - monthly: standard data LCU 
+- `mw2wu` - monthly: country-specific calibration (uni) LCU
+- `mw3wu` - monthly: country-specific calibration with imputation (uni) LCU
+- `mw4wu` - monthly: uniform calibration (uni) LCU 
+- `mw2wl` - monthly: country-specific calibration (lex) LCU 
+- `mw3wl` - monthly: country-specific calibration with imputation (lex) LCU 
+- `mw4wl` - monthly: uniform calibration (lex) LCU 
+- `mw1us` - monthly: standard data US$
+- `mw2wuus` - monthly: country-specific calibration (uni) US$
+- `mw3wuus` - monthly: country-specific calibration with imputation (uni) US$
+- `mw4wuus` - monthly: uniform calibration (uni) US$
+- `mw2wlus` - monthly: country-specific calibration (lex) US$
+- `mw3wlus` - monthly: country-specific calibration with imputation (lex) US$
+- `mw4wlus` - monthly: uniform calibration (lex) US$
+- `curr` - currency as reported in ILO October Inquiry
+- `exrt` - exchange rate: LCU per US$
+- `conv`- conversion factor for wages in LCU
+- `curr_conv` - currency used for conversion factor
